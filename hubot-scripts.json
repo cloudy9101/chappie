@@ -1,1 +1,1 @@
-["github-credentials.coffee", "redis-brain.coffee"]
+["github-credentials.coffee", "redis-brain.coffee", "github-search.coffee", "google-search-api.coffee"]
