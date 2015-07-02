@@ -8,6 +8,10 @@
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
+process.env['HUBOT_TRELLO_KEY'] = "2b474819e15b56254f9f941fc3700baa"
+process.env['HUBOT_TRELLO_TOKEN'] = "d1a5f8c3ea9512e57e1ecdcdc3194e5b5c1b9e695f5c70726f78b73228330a5a"
+process.env['HUBOT_TRELLO_LIST'] = "5561af046a87b5379da20728"
+
 module.exports = (robot) ->
 
   robot.hear /badger/i, (res) ->
