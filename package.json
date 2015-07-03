@@ -12,6 +12,7 @@
     "hubot-google-translate": "^0.2.0",
     "hubot-help": "^0.1.1",
     "hubot-heroku-keepalive": "0.0.4",
+    "hubot-lets-chat": "0.0.7",
     "hubot-maps": "0.0.2",
     "hubot-pugme": "^0.1.0",
     "hubot-redis-brain": "0.0.3",
@@ -19,7 +20,8 @@
     "hubot-scripts": "^2.16.1",
     "hubot-shipit": "^0.2.0",
     "hubot-slack": "^3.3.0",
-    "node-trello": "1.1.2"
+    "node-trello": "1.1.2",
+    "hubot-deploy": "0.6.53"
   },
   "engines": {
     "node": "0.10.x"

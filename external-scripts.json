@@ -10,5 +10,6 @@
   "hubot-rules",
   "hubot-shipit",
   "hubot-github-notify",
-  "node-trello"
+  "node-trello",
+  "hubot-deploy"
 ]

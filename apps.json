@@ -1,0 +1,8 @@
+{
+  "dw": {
+    "provider": "capistrano",
+    "auto_merge": false,
+    "repository": "cloudy9101/dreamweaver",
+    "environments": ["production"]
+  }
+}
