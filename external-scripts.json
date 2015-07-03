@@ -9,7 +9,6 @@
   "hubot-redis-brain",
   "hubot-rules",
   "hubot-shipit",
-  "hubot-github-notify",
   "node-trello",
   "hubot-deploy"
 ]
