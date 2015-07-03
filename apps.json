@@ -3,6 +3,7 @@
     "provider": "capistrano",
     "auto_merge": false,
     "repository": "cloudy9101/dreamweaver",
-    "environments": ["production"]
+    "environments": ["production"],
+    "github_token": "f776dbe00dedbc700963991e6073064f85af24cc"
   }
 }
