@@ -12,7 +12,7 @@ process.env['HUBOT_TRELLO_KEY'] = "2b474819e15b56254f9f941fc3700baa"
 process.env['HUBOT_TRELLO_TOKEN'] = "d1a5f8c3ea9512e57e1ecdcdc3194e5b5c1b9e695f5c70726f78b73228330a5a"
 process.env['HUBOT_TRELLO_LIST'] = "5561af046a87b5379da20728"
 
-process.env['HUBOT_GITHUB_TOKEN'] = "952debef03f5424ca7b1f5ad51df66baeae44818"
+process.env['HUBOT_GITHUB_TOKEN'] = "93d89e7c7c01dc9c3ef282fa11e0786cd6d16dcd"
 
 module.exports = (robot) ->
 
