@@ -8,13 +8,15 @@
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
-process.env['HUBOT_TRELLO_KEY'] = "2b474819e15b56254f9f941fc3700baa"
-process.env['HUBOT_TRELLO_TOKEN'] = "d1a5f8c3ea9512e57e1ecdcdc3194e5b5c1b9e695f5c70726f78b73228330a5a"
-process.env['HUBOT_TRELLO_LIST'] = "5561af046a87b5379da20728"
-
-process.env['HUBOT_GITHUB_TOKEN'] = "93d89e7c7c01dc9c3ef282fa11e0786cd6d16dcd"
-
 module.exports = (robot) ->
+
+  robot.respond /乘车信息/i, (ress) ->
+    # robot.http("http://events.geekpark.net/api/v1/slack/bus_info")
+    robot.http("http://127.0.0.1:3000/api/v1/slack/bus_info?private_key=#{process.env.GPK_PRIVATE_KEY}")
+         .get() (err, res, body) ->
+
+            data = JSON.parse body
+            ress.send "#{data.bus_info}"
 
   robot.hear /badger/i, (res) ->
     res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
