@@ -12,7 +12,7 @@ module.exports = (robot) ->
 
   robot.respond /乘车信息/i, (ress) ->
     # robot.http("http://events.geekpark.net/api/v1/slack/bus_info")
-    robot.http("http://127.0.0.1:3000/api/v1/slack/bus_info?private_key=#{process.env.GPK_PRIVATE_KEY}")
+    robot.http("http://events.geekpark.net/api/v1/slack/bus_info?private_key=#{process.env.GPK_PRIVATE_KEY}")
          .get() (err, res, body) ->
 
             data = JSON.parse body
