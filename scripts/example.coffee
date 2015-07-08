@@ -11,12 +11,20 @@
 module.exports = (robot) ->
 
   robot.respond /乘车信息/i, (ress) ->
-    # robot.http("http://events.geekpark.net/api/v1/slack/bus_info")
-    robot.http("http://events.geekpark.net/api/v1/slack/bus_info?private_key=#{process.env.GPK_PRIVATE_KEY}")
+    robot.http("http://127.0.0.1:3000/api/v1/slack/bus_info?private_key=490043879187b5b467d0f00c958cede4b2821c0d73f154b82496366bb9369462")
+    # robot.http("http://events.geekpark.net/api/v1/slack/bus_info?private_key=#{process.env.GPK_PRIVATE_KEY}")
          .get() (err, res, body) ->
 
             data = JSON.parse body
             ress.send "#{data.bus_info}"
+
+  robot.respond /售票信息/i, (ress) ->
+    robot.http("http://127.0.0.1:3000/api/v1/slack/tickets_info?private_key=490043879187b5b467d0f00c958cede4b2821c0d73f154b82496366bb9369462")
+    # robot.http("http://events.geekpark.net/api/v1/slack/bus_info?private_key=#{process.env.GPK_PRIVATE_KEY}")
+         .get() (err, res, body) ->
+
+            data = JSON.parse body
+            ress.send "#{data.tickets_info}"
 
   robot.hear /badger/i, (res) ->
     res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
