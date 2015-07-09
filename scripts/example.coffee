@@ -31,7 +31,10 @@ module.exports = (robot) ->
     robot.http("http://events.geekpark.net/api/v1/slack/send_ticket?private_key=#{process.env.GPK_PRIVATE_KEY}&query_attr=#{ress.match[1]}")
          .get() (err, res, body) ->
 
-            ress.send "#{body}"
+            if body.success
+              ress.send "#{body.success}, 二维码地址#{body.qrcode_url}"
+            else
+              ress.send "#{body}"
 
   robot.hear /badger/i, (res) ->
     res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
