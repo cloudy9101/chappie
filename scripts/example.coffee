@@ -26,6 +26,13 @@ module.exports = (robot) ->
             data = JSON.parse body
             ress.send "#{data.tickets_info}"
 
+  robot.respond /send ticket (.*)/i, (ress) ->
+    # robot.http("http://127.0.0.1:3000/api/v1/slack/send_ticket?private_key=490043879187b5b467d0f00c958cede4b2821c0d73f154b82496366bb9369462&query_attr=#{ress.match[1]}")
+    robot.http("http://events.geekpark.net/api/v1/slack/send_ticket?private_key=#{process.env.GPK_PRIVATE_KEY}&query_attr=#{ress.match[1]}")
+         .get() (err, res, body) ->
+
+            ress.send "#{body}"
+
   robot.hear /badger/i, (res) ->
     res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
 
