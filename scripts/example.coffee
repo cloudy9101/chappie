@@ -10,6 +10,17 @@
 
 module.exports = (robot) ->
 
+  robot.respond /query user (.*)/i, (ress) ->
+    # robot.http("http://127.0.0.1:3000/api/v1/slack/query_user?private_key=490043879187b5b467d0f00c958cede4b2821c0d73f154b82496366bb9369462&query_attr=#{ress.match[1]}")
+    robot.http("http://events.geekpark.net/api/v1/slack/query_user?private_key=#{process.env.GPK_PRIVATE_KEY}&query_attr=#{ress.match[1]}")
+      .get() (err, res, body) ->
+
+        data = JSON.parse body
+        if data.success isnt undefined
+          ress.send "#{data.success}"
+        else
+          ress.send "#{data.error}"
+
   robot.respond /乘车信息/i, (ress) ->
     # robot.http("http://127.0.0.1:3000/api/v1/slack/bus_info?private_key=490043879187b5b467d0f00c958cede4b2821c0d73f154b82496366bb9369462")
     robot.http("http://events.geekpark.net/api/v1/slack/bus_info?private_key=#{process.env.GPK_PRIVATE_KEY}")
@@ -31,10 +42,11 @@ module.exports = (robot) ->
     robot.http("http://events.geekpark.net/api/v1/slack/send_ticket?private_key=#{process.env.GPK_PRIVATE_KEY}&query_attr=#{ress.match[1]}")
          .get() (err, res, body) ->
 
-            if body.success
-              ress.send "#{body.success}, 二维码地址#{body.qrcode_url}"
+            data = JSON.parse body
+            if data.success isnt undefined
+              ress.send "#{data.success}, 二维码地址#{data.qrcode_url}"
             else
-              ress.send "#{body}"
+              ress.send "Sorry! #{data.error}"
 
   robot.hear /badger/i, (res) ->
     res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
