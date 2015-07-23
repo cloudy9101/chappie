@@ -18,5 +18,12 @@
     "auto_merge": false,
     "repository": "GeekPark/gpk_main",
     "environments": ["production"]
+  },
+
+  "dreamweaver": {
+    "provider": "bundler_capistrano",
+    "auto_merge": false,
+    "repository": "cloudy9101/dreamweaver",
+    "environments": ["production"]
   }
 }
