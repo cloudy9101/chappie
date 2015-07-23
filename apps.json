@@ -1,14 +1,22 @@
 {
-  "dw": {
-    "provider": "bundler_capistrano",
-    "auto_merge": false,
-    "repository": "cloudy9101/dreamweaver",
-    "environments": ["production"]
-  },
-  "singularity": {
+  "奇点": {
     "provider": "bundler_capistrano",
     "auto_merge": false,
     "repository": "GeekPark/singularity",
+    "environments": ["production"]
+  },
+
+  "活动站": {
+    "provider": "bundler_capistrano",
+    "auto_merge": false,
+    "repository": "GeekPark/gpk_event",
+    "environments": ["production"]
+  },
+
+  "主站": {
+    "provider": "bundler_capistrano",
+    "auto_merge": false,
+    "repository": "GeekPark/gpk_main",
     "environments": ["production"]
   }
 }
