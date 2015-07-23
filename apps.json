@@ -1,19 +1,19 @@
 {
-  "奇点": {
+  "singularity": {
     "provider": "bundler_capistrano",
     "auto_merge": false,
     "repository": "GeekPark/singularity",
     "environments": ["production"]
   },
 
-  "活动站": {
+  "event": {
     "provider": "bundler_capistrano",
     "auto_merge": false,
     "repository": "GeekPark/gpk_event",
     "environments": ["production"]
   },
 
-  "主站": {
+  "main": {
     "provider": "bundler_capistrano",
     "auto_merge": false,
     "repository": "GeekPark/gpk_main",
