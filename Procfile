@@ -1,1 +1,1 @@
-web: bin/hubot --adapter slack -l c -l '查派'
+web: bin/hubot --adapter slack -l c
